@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "DevOverflow",
+  title: "Dev Overflow",
   description: "A platform for TechnoPeople",
   // icons: {
   //   icon: "/assets/images/site-logo.svg",

@@ -6,8 +6,6 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { themes } from "@/constants";
@@ -63,7 +61,9 @@ const Theme = () => {
                     ? "text-primary-500"
                     : "text-dark100_light900"
                 }`}
-              ></p>
+              >
+                {theme.label}
+              </p>
             </MenubarItem>
           ))}
         </MenubarContent>
