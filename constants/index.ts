@@ -1,4 +1,4 @@
-import { SidebarLink } from "@/types";
+import { LeftSidebarLink } from "@/types";
 
 export const themes = [
   { value: 'light', label: 'Light', icon: '/assets/icons/sun.svg' },
@@ -6,7 +6,7 @@ export const themes = [
   { value: 'system', label: 'System', icon: '/assets/icons/computer.svg' },
 ]
 
-export const sidebarLinks: SidebarLink[] = [{
+export const LeftSidebarLinks: LeftSidebarLink[] = [{
   imgURL: "/assets/icons/home.svg", route: "/",
   label: "Home",
 },

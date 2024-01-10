@@ -9,14 +9,14 @@ import {
 import Link from "next/link";
 import { SignedOut } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
-import { sidebarLinks } from "@/constants";
+import { LeftSidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 
 const NavContent = () => {
   const pathname = usePathname();
   return (
     <section className="flex h-full flex-col gap-6 pt-16">
-      {sidebarLinks.map((linkItem) => {
+      {LeftSidebarLinks.map((linkItem) => {
         const isActive =
           (pathname.includes(linkItem.route) && linkItem.route.length > 1) ||
           pathname === linkItem.route;
