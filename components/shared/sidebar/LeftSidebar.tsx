@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { LeftSidebarLinks } from "@/constants";
 import { SignedOut } from "@clerk/nextjs";
-import Image from "next/Image";
+import Image from "next/image"; 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
