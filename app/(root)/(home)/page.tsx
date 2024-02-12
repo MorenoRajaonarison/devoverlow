@@ -1,6 +1,7 @@
 import Filter from "@/components/shared/Filter/Filter";
 import HomeFilter from "@/components/shared/Filter/HomeFilter";
 import NoResult from "@/components/shared/NoResult";
+import QuestionCard from "@/components/shared/cards/QuestionCard";
 import LocalSearch from "@/components/shared/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filter";
@@ -10,7 +11,7 @@ const questions = [
   {
     _id: 1,
     title: "Quelle est la capitale de la France ?",
-    author: "Jean",
+    author: { _id: 1, name: "Moreno" },
     upVotes: 10,
     views: 50,
     answer: 3,
@@ -23,7 +24,7 @@ const questions = [
   {
     _id: 2,
     title: "Qu'est-ce que la photosynthèse ?",
-    author: "Marie",
+    author: { _id: 2, name: "Moreno" },
     upVotes: 20,
     views: 100,
     answer: 5,
@@ -36,7 +37,7 @@ const questions = [
   {
     _id: 3,
     title: "Comment fonctionne la blockchain ?",
-    author: "Pierre",
+    author: { _id: 2, name: "Moreno" },
     upVotes: 15,
     views: 80,
     answer: 7,
@@ -78,7 +79,19 @@ export default function Home() {
 
       <div className="mt-10 flex w-full flex-col gap-6">
         {questions.length > 0 ? (
-          questions.map((qst) => "Question")
+          questions.map((qst) => (
+            <QuestionCard
+              key={qst._id}
+              _id={qst._id}
+              title={qst.title}
+              author={qst.author}
+              upVotes={qst.upVotes}
+              answer={qst.answer}
+              createdAt={qst.createdAt}
+              tags={qst.tags}
+              views={qst.views}
+            />
+          ))
         ) : (
           <NoResult
             title="THere's no question to show"

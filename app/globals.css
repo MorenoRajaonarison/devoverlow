@@ -21,7 +21,7 @@ body {
   }
 
   .card-wrapper {
-    @apply bg-light-900 dark:dark-gradient shadow-light-100 dar
+    @apply bg-light-900 dark:dark-gradient shadow-light-100 dark:shadow-dark-100;
   }
 
   .btn {
@@ -37,7 +37,7 @@ body {
   }
 
   .markdown {
-    @apply max-w-full prose dark:prose-p:text-light-700 dark:pros
+    @apply max-w-full prose dark:prose-p:text-light-700 dark:pros;
   }
 
   .primary-gradient {
@@ -45,30 +45,33 @@ body {
   }
 
   .dark-gradient {
-    background: linear-gradient(232deg,
-        rgba(23, 28, 35, 0.41) 0%,
-        rgba(19, 22, 28, 0.7) 100%);
+    background: linear-gradient(
+      232deg,
+      rgba(23, 28, 35, 0.41) 0%,
+      rgba(19, 22, 28, 0.7) 100%
+    );
   }
 
   .tab {
-    @apply min-h-full dark:bg-dark-400 bg-light-800 text-light-5
+    @apply min-h-full dark:bg-dark-400 bg-light-800 text-light-5;
   }
 
   .no-focus {
-    @apply focus-visible:ring-0 focus-visible:ring-transparent
+    @apply focus-visible:ring-0 focus-visible:ring-transparent;
   }
 }
 
-
-
 .active-theme {
-  filter: invert(53%) sepia(98%) saturate(3332%) hue-rotate(0deg) brightness(104%) contrast(106%) !important;
+  filter: invert(53%) sepia(98%) saturate(3332%) hue-rotate(0deg)
+    brightness(104%) contrast(106%) !important;
 }
 
 .light-gradient {
-  background: linear-gradient(132deg,
-      rgba(247, 249, 255, 0.5) 0%,
-      rgba(229, 237, 255, 0.25) 100%);
+  background: linear-gradient(
+    132deg,
+    rgba(247, 249, 255, 0.5) 0%,
+    rgba(229, 237, 255, 0.25) 100%
+  );
 }
 
 .primary-text-gradient {
@@ -134,7 +137,7 @@ color: inherit !important;
 /* Markdown End */
   /* Clerk */
   .cl-internal-b3fm6y {
-    background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%)
+    background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
   }
 
   .hash-span {
