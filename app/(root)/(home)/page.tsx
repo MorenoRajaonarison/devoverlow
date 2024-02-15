@@ -26,7 +26,7 @@ const questions = [
     title: "Qu'est-ce que la photosynthèse ?",
     author: { _id: 2, name: "Moreno" },
     upVotes: 20,
-    views: 100,
+    views: 10000000,
     answer: 5,
     createdAt: new Date("2023-08-20"),
     tags: [
@@ -39,7 +39,7 @@ const questions = [
     title: "Comment fonctionne la blockchain ?",
     author: { _id: 2, name: "Moreno" },
     upVotes: 15,
-    views: 80,
+    views: 800000,
     answer: 7,
     createdAt: new Date("2023-10-10"),
     tags: [
