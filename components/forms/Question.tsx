@@ -9,15 +9,26 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Editor } from "@tinymce/tinymce-react";
 import { z } from "zod";
 
 import { questionSchema } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
 const Question = () => {
+  const editorRef = useRef(null);
+
+  const log = () => {
+    if (editorRef.current) {
+      // @ts-ignore
+      console.log(editorRef.current.getContent());
+    }
+  };
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof questionSchema>>({
     resolver: zodResolver(questionSchema),
@@ -71,9 +82,46 @@ const Question = () => {
                 Detailed explanation of your problem
                 <span className="text-primary-500">*</span>
               </FormLabel>
-              {/* TODO: add a editor component*/}
+              <FormControl className="mt-3.5">
+                <Editor
+                  apiKey={process.env.NEXT_PUBLIC_TINY_EDITOR_API_KEY}
+                  init={{
+                    plugins: [
+                      "advlist",
+                      "autolink",
+                      "lists",
+                      "link",
+                      "image",
+                      "charmap",
+                      "preview",
+                      "anchor",
+                      "searchreplace",
+                      "visualblocks",
+                      "codesample",
+                      "fullscreen",
+                      "insertdatetime",
+                      "media",
+                      "table",
+                      "wordcount",
+                    ],
+                    toolbar:
+                      "undo redo | codesample | bold italic forecolor | align lineheight | numlist bullist indent outdent",
+                    tinycomments_mode: "embedded",
+                    tinycomments_author: "Author name",
+                    mergetags_list: [
+                      { value: "First.Name", title: "First Name" },
+                      { value: "Email", title: "Email" },
+                    ],
+                    // ai_request: (request, respondWith) =>
+                    //   respondWith.string(() =>
+                    //     Promise.reject("See docs to implement AI Assistant")
+                    //   ),
+                  }}
+                  initialValue=""
+                />
+              </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
-                Introducethe problemand expand on whatyou put in the title.
+                Introduce the problemand expand on whatyou put in the title.
                 MInimum 20characters
               </FormDescription>
               <FormMessage className="text-red-500" />
